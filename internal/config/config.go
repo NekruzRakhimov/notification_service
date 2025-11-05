@@ -3,9 +3,10 @@ package config
 const ServiceLabel = "auth_service"
 
 type Config struct {
-	HTTPPort string `env:"HTTP_PORT"`
-	AMQPURL  string `env:"AMQP_URL"`
-	Smtp     Smtp   `env:",prefix=SMTP_"`
+	HTTPPort       string `env:"HTTP_PORT"`
+	AMQPURL        string `env:"AMQP_URL"`
+	Smtp           Smtp   `env:",prefix=SMTP_"`
+	AuthServiceURL string `env:"AUTH_SERVICE_URL"`
 }
 
 type Smtp struct {

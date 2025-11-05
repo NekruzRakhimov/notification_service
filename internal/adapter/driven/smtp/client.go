@@ -22,7 +22,6 @@ const (
 
 func (c *Client) Send(ctx context.Context, recipient string, subject, body string) error {
 	// Получаем credentials из переменных окружения
-	c.Password = "owuv ciig uqyi ajxk"
 
 	if c.Username == "" || c.Password == "" {
 		return fmt.Errorf("GMAIL credentials not set in environment variables")

@@ -1,6 +1,5 @@
 package amqp
 
-import "C"
 import (
 	"context"
 	"encoding/json"
@@ -51,7 +50,7 @@ func (c *ConsumersAMQP) Run() {
 				log.Fatal(err)
 			}
 
-			err = c.Usecase.Sender.Send(context.Background(), data.Recipient, data.Subject, data.Body)
+			err = c.Usecase.Auth.Send(context.Background(), data.Recipient)
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -81,7 +80,7 @@ func (c *ConsumersAMQP) Run() {
 				log.Fatal(err)
 			}
 
-			err = c.Usecase.Sender.Send(context.Background(), data.Recipient, data.Subject, data.Body)
+			err = c.Usecase.NewProduct.Send(context.Background(), data.Subject, data.Body)
 			if err != nil {
 				log.Fatal(err)
 			}
