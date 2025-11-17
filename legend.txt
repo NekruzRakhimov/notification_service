@@ -1,0 +1,2 @@
+docker build -t notification-service .
+docker run -d --env-file .env -p 8286:8286 notification-service

@@ -3,6 +3,7 @@ package smtp
 import (
 	"context"
 	"fmt"
+
 	"gopkg.in/gomail.v2"
 )
 
